@@ -1,0 +1,12 @@
+	\chapter{Podsumowanie}
+	Zapoponowane rozwiązanie miało na celu segmentację ścian budynków. Posiada ono zarówno zalety jak i wady.\\
+	\textbf{Zalety rozwiązania:}
+	\begin{itemize}% i oto stała się lista
+		\item Poza całymi ścianami wykrywa także fragmenty ścian. W rozważanej chmurze punktów wystąpił problem z zeskanowaniem ścian. Znaczna ich część była zeskanowana fragmentarycznie, jednak nawet te niewielkie fragmenty są uwzględniane.
+		\item Rowiązanie jest proste i przejrzyste.
+	\end{itemize}
+	\textbf{Wady rozwiązania:}
+	\begin{itemize}
+		\item Poza ścianami budynków wykrywa część podobnych obiektów. Wykrywane zostają niektóre ściany samochodów lub obiekty podobne do ścian. Dzieje się tak przez progi ustawione w kodzie. Zakres kątów jest duży, jednak było to bardzo pomocne przy segmentacji źle zeskanowanych ścian.
+		\item Rozwiązanie jest stosunkowo wolne. Wynikać to może jednak częściowo z samego faktu, iż chmura punktów 3D jest wymagająca obliczeniowo dużo bardziej niż np. obraz 2D. 
+	\end{itemize}

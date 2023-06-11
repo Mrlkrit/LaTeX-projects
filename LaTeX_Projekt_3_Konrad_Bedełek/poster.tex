@@ -1,0 +1,268 @@
+
+\documentclass[final]{beamer}
+
+\usepackage[orientation=landscape,size=a3]{beamerposter}%size modify
+\usepackage{multicol}%for columns
+\usepackage[utf8]{inputenc}
+\usepackage{color}%for colors
+\usepackage{tikz}%draw
+\usepackage{graphicx}% images
+
+% Colors
+\definecolor{marronrp3}{rgb}{.9,.9,.7}
+\definecolor{salmon}{rgb}{1,.9,.8}
+
+
+
+
+
+% ===========================================================================
+
+\begin{document}
+\begin{frame}
+
+\begin{center}
+  \begin{minipage}{.19\linewidth}
+    \includegraphics[width=.6\linewidth]{logo.jpg}
+  \end{minipage}
+  %Cool title
+  \begin{minipage}{.6\linewidth}
+    \begin{center}
+      \Huge \textbf{A cool title for this LaTeX project}
+    \end{center}
+  \end{minipage}
+  %&
+  %Author,university and thanks
+  \hspace{.03\linewidth}
+  \begin{minipage}{0.16\linewidth}
+    \begin{flushright}
+      Konrad Bedełek\\
+      Dept. Mechatronics\\
+      Warsaw University of Technology, Warsaw\\
+      \vspace{.1cm} \small \emph{These results were obtained under the
+        supervision and help of Krzysztof Wildner. I wish to thank
+        him for his explanations and suggestions.}
+    \end{flushright}
+  \end{minipage}
+\end{center}
+
+\vspace{.1cm}
+
+% ---------------------------------------------------------------------------
+
+\setlength{\columnsep}{1cm}
+\begin{multicols}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%some kind of abstract in color
+\noindent
+\fcolorbox{black}{salmon}{
+  \begin{minipage}[t]{.96\linewidth}
+    \vspace{.05cm}
+    \begin{center}
+      \vspace{.1cm}
+      \section*{\Huge Main result}
+	
+      \Large In \cite{kowal1} we prove that the well-known
+      asymptotic behavior of students to the generalized
+      university system takes place for general initial data,
+      extending the previous knowledge that placed some restrictions
+      on it.
+    \end{center}
+  \end{minipage}
+}
+\vspace{.3cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%text
+The graduation equations describe the
+evolution of a large number of students which can stick together or
+break. Here we deal with the discrete version.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%import images and make subtitles using tables
+\begin{center}
+
+  \begin{tabular}[h]{lll}
+    $c_j$  &  $\equiv$  &  graduates
+  \end{tabular}
+
+  \vspace{.3cm}
+
+
+  \begin{minipage}[t]{.4\linewidth}
+    \begin{center}
+
+      \includegraphics[width=3cm]{logo1.png}
+
+
+      \begin{tabular}{cc}
+        $b_{jk}$  $\equiv$ &  rate of occurrence of\\
+        &  enlightenment $j+k \to j,k$
+      \end{tabular}
+    \end{center}
+  \end{minipage}
+  
+  \hspace{.3cm}
+
+  \begin{minipage}[t]{.4\linewidth}
+    \begin{center}
+
+      \includegraphics[width=3cm]{logo3.jpg}
+
+
+      \begin{tabular}{cc}
+        $a_{jk}$   $\equiv$ &  rate of occurrence of\\
+        &  goofiness $j \to j+k$
+      \end{tabular}
+    \end{center}                    
+  \end{minipage}
+
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cool ecquation
+\vspace{.4cm}
+
+\noindent
+\colorbox{marronrp3}{
+  \begin{minipage}[t]{.96\linewidth}
+    \Large
+    \begin{align*}
+      \frac{d}{dt} c_j
+      & = &&  \frac{1}{2} \sum_{k=1}^{j-1} a_{k,j-k}  c_k c_{j-k}
+      &  \text{Students entering university}\\
+      && - &\sum_{k=1}^{\infty} a_{jk} c_j c_k
+      &   \text{Students that run away after one week}\\
+      && + &\sum_{k=j+1}^{\infty} b_{j,k-j} c_k
+      &   \text{Students who try once again}\\
+      && - &\frac{1}{2} \sum_{k=1}^{j-1} b_{k,j-k} c_j
+      & \text{Students that do not survive finals}
+    \end{align*}
+    \vspace{.02cm}
+  \end{minipage}
+}
+
+\vspace{.3cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\columnbreak
+% some text and draw star using tikz
+Star is any massive self-luminous celestial body of gas that shines by radiation derived from its internal energy sources.
+Of the tens of billions of trillions of stars composing the observable universe, only a very small percentage are visible to the naked eye.
+Many stars occur in pairs, multiple systems, or star clusters.
+The members of such stellar groups are physically related through common origin and are bound by mutual gravitational attraction.
+Somewhat related to star clusters are stellar associations,
+which consist of loose groups of physically similar stars that have insufficient mass as a group to remain together as an organization.
+So should you be worried about the star?
+
+\begin{figure}
+   \centering
+      \begin{tikzpicture}[scale=4]
+         \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
+         \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
+          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
+      \end{tikzpicture}
+   \caption{It's my big star}
+
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%more colored blocks
+\noindent
+\begin{center}
+  \noindent
+  \colorbox{marronrp3}{
+    \begin{minipage}[t]{.96\linewidth}
+      \begin{align*}
+        & \text{\Large Below critical mass}
+        &\to \quad
+        &\begin{cases}
+          \text{ \Large No danger }\\
+          \text{ \Large No need to worry }
+        \end{cases}
+        &
+        \\
+        &\text{\Large Over critical mass }
+        &\to \quad
+        &\begin{cases}
+          \text{ \Large Run!!!}\\
+          \text{\Large  Too late }
+        \end{cases}
+        &
+      \end{align*}
+    \end{minipage}
+  }
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%table
+
+\begin{center}  
+\vspace{.5cm}
+
+\Large
+\begin{tabular}[t]{c|c}
+  \multicolumn{2}{c}{\huge \textbf{The Stars}}
+  \vspace{.3cm}
+  \\
+  VY Canis Majoris& Big Boi\\
+  \hline
+  LGGS &Even\\
+  J004520.67+414717.3 &BIGGER\\
+  \hline
+  Stephenson & That is \\
+  2-18 & quite big
+\end{tabular}
+
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+\columnbreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et quam nisi. Donec finibus ultrices sem, quis feugiat neque luctus eget. Integer tincidunt luctus lectus, a vehicula justo facilisis sed. 
+Suspendisse egestas arcu sed ante finibus egestas. Nullam viverra orci neque, at porttitor tortor fermentum non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Duis rutrum fringilla libero sed lobortis. Nunc odio eros, dignissim vitae tristique at, tincidunt non lacus. Praesent euismod lobortis blandit.
+Proin pellentesque libero lorem, eleifend semper nulla maximus non.\cite{kowal2}
+
+Fusce at ligula velit. Phasellus fringilla placerat fringilla. Integer porta ligula nunc. Integer nec arcu suscipit tellus tincidunt iaculis quis non urna.
+Sed dignissim tristique elit vitae volutpat. Cras vel mi ac eros porttitor pellentesque at eget ipsum. Aliquam nisl tortor, vestibulum ac vehicula eu, pulvinar nec quam. 
+Praesent sit amet diam id dolor accumsan consectetur at eget sem. Nulla ac lorem et mauris consequat laoreet. Etiam elit neque, mollis nec accumsan nec, ultricies vel enim. 
+Etiam non fermentum sapien, ut eleifend ex. Etiam iaculis auctor dui. Sed efficitur ultrices viverra. In volutpat placerat bibendum.\cite{hans1}
+
+%a bunch of text and simple list
+
+
+\begin{table}
+{\LARGE{List of steps needed to be taken}}
+  \begin{enumerate}
+    \item Do A.
+    \item Do B.
+    \item Do C.
+  \end{enumerate}
+\end{table}
+The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout.
+A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
+\vspace{.5cm}
+
+The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets,
+and again during the 90s as desktop publishers bundled the text with their software. 
+Today it's seen all around the web; on templates, websites, and stock designs. 
+Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+\vspace{.4cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\small
+%bibliografia
+\begin{thebibliography}{9}
+\bibitem{kowal1} Kowalski A. How I met your mother, Warszawa, 2018
+\bibitem{kowal2} Kowalski J. I don't know what I did, 2015
+\bibitem{hans1} Copernicus H. Mein Land, 1939
+\end{thebibliography}
+
+
+\end{multicols}
+\end{frame}
+\end{document}

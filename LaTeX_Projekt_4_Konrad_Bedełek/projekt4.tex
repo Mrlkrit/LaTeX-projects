@@ -1,0 +1,124 @@
+\documentclass{beamer}%klasa beamer
+\usepackage[T1]{fontenc}%to jest tu potrzebne bo inaczej coś tex protestuje
+
+%do slajdu tytułowego
+\title{Prezentacja \LaTeX}
+\subtitle{Tworzenie tabel}
+\author{Konrad Bedełek}
+\institute{Wydział Mechatroniki\\ Politechnika Warszawska}
+\date{\today}
+
+\usetheme{Warsaw}%motyw
+\usecolortheme{rose}%motyw kolorystyczny
+
+
+
+\begin{document}
+
+%Pierwszy slajd(tytułowy)
+\begin{frame}
+\titlepage
+\end{frame}
+
+%Drugi slajd
+\begin{frame}
+
+\frametitle{Tworzenie tabel}
+
+Do tworzenia prostych tabel w Beamerze służy otoczenie tabular.
+\begin{itemize}[<+->]%dołączanie elementów 
+\item Tabele zaczynają się poleceniem \textbackslash begin\{tabular\}\{ccc\}.
+\item \{ccc\} określa liczbę kolumn oraz wyrównanie każdej z nich.\\
+Ta tabela ma trzy kolumny, każda wyrównana centralnie.
+\item Kolumny mogą być wyrównywane na lewo \{l\}, centralnie\\
+\{c\}, lub na prawo \{r\}.
+\item Można mieszać wyrównywania. Np. \{lcrrr\}.
+\item Tabele są tworzone wiersz po wierszu. Znak \& rozdziela\\
+komórki, a każdy wiersz jest zakończony przez \textbackslash\textbackslash.
+\item \textbackslash end\{tabular\} zamyka tabelę.
+
+\end{itemize}
+\end{frame}
+
+%Trzeci slajd
+\begin{frame}
+\frametitle{Tworzenie tabel}
+Typowa tabela w Beamerze wygląda następująco:
+
+\begin{block}{Przykładowa tabela}%blok informacyjny z zapisanymi komendami
+\textbackslash begin\{tabular\}\{ccc\}\\
+cell 1 \& cell 2 \& cell 3 \\
+cell 4 \& cell 5 \& cell 6 \\
+\textbackslash end\{tabular\}
+
+\end{block}
+\pause%w następnym slajdzie dołącz tabelę
+\begin{tabular}{ccc}
+cell 1 & cell 2 & cell 3 \\
+cell 4 & cell 5 & cell 6 \\
+\end{tabular}
+
+\end{frame}
+
+%Czwarty slajd
+
+\begin{frame}
+\frametitle{Tworzenie tabel}
+Możemy dodać znaki | pomiędzy kolumnami, aby je rozdzielić
+pionowymi kreskami.
+\begin{block}{Przykładowa tabela}
+\textbackslash begin\{tabular\}\{|c|c|c|\}\\
+cell 1 \& cell 2 \& cell 3 \\
+cell 4 \& cell 5 \& cell 6 \\
+\textbackslash end\{tabular\}
+
+\end{block}
+\pause
+\begin{tabular}{|c|c|c|}
+cell 1 & cell 2 & cell 3 \\
+cell 4 & cell 5 & cell 6 \\
+\end{tabular}
+
+\end{frame}
+
+
+
+%Piąty slajd
+
+\begin{frame}
+\frametitle{Tworzenie tabel}
+Aby stworzyć nagłówki możemy użyć \textbackslash textbf i \textbackslash hline:
+\begin{block}{Przykładowa tabela}
+\textbackslash begin\{tabular\}\{c||c|c|c|\}\\
+\& \textbackslash textbf\{Ng. 1\}\& \textbackslash textbf\{Ng. 2\}\& \textbackslash textbf\{Ng. 3\}\\
+\textbackslash hline \textbackslash hline\\
+\textbackslash textbf\{Ng. 4\} \& cell 1 \& cell 2 \& cell 3 \\
+\textbackslash hline\\
+\textbackslash textbf\{Ng. 5\} \& cell 4 \& cell 5 \& cell 6 \\
+\textbackslash end\{tabular\}
+
+
+\end{block}
+\pause
+\begin{tabular}{c||c|c|c|}
+& \textbf{Ng. 1}& \textbf{Ng. 2}& \textbf{Ng. 3}\\
+\hline \hline
+\textbf{Ng. 4} & cell 1 & cell 2 & cell 3 \\
+\hline
+\textbf{Ng. 5} & cell 4 & cell 5 & cell 6 \\
+\end{tabular}
+
+
+\end{frame}
+
+%bibliografia
+\begin{frame}
+\frametitle{Literatura}
+\begin{thebibliography}{9}
+\bibitem{wyklad} Wildner K. Slajdy z wykładu: Dokumentacja i prezentacja wyników badań i projektów z
+zastosowaniem środowiska \LaTeX
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}

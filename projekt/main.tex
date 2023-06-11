@@ -1,0 +1,29 @@
+\documentclass[12pt, a4paper, oneside]{mwrep}
+\usepackage[utf8]{inputenc}
+\usepackage[final]{graphicx}%grafika
+\usepackage{tabularx}%tabela
+\usepackage{polski}%język polski
+
+\graphicspath{{img/}}%ścieżka do pliku z grafiką
+\bibliographystyle{plain}%styl bibliografii
+
+\begin{document}
+
+	% Strona tytułowa
+	\input{titlepage}
+	
+	% Spis treści	
+	\newpage
+	\tableofcontents{}
+	%Rozdziały
+	\input{chapter1}
+	\input{chapter2}
+	\input{chapter3}
+	\input{chapter4}
+	\input{chapter5}
+	\input{chapter6}
+
+	%Bibliografia
+	\bibliography{bibliography}
+
+\end{document}
